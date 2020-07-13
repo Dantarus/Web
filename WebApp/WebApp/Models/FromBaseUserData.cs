@@ -90,7 +90,7 @@ namespace WebApp.Models
             FromBaseUserLogin(id);
             return userLogin;
         }
-        public static int ToBaseUserLogin(string Login, string Password, string Email)
+        public static void ToBaseUserLogin(string Login, string Password, string Email)
         {
             //definiowanie zpaytania do bazy do inserowania wiersza tabeli
             string query = "INSERT INTO dbo.[UData](login, email, password) VALUES(@Login, @Email, @Password)";
@@ -108,11 +108,11 @@ namespace WebApp.Models
                 {
                     adapter.InsertCommand = command;
                     adapter.InsertCommand.ExecuteNonQuery();
-                    return -5;
+                    ErrorAndExceptions.RegisterError(5);
                 }
                 catch (Exception)
                 {
-                    return -6;
+                    ErrorAndExceptions.RegisterError(6);
                 }
                 connection.Close();
 
@@ -171,20 +171,20 @@ namespace WebApp.Models
             }
             return text;
         }
-        public static int CheckRegisterData(string InputLogin, string InputPassword, string InputConfirmPassword, string InputEmail)
+        public static void CheckRegisterData(string InputLogin, string InputPassword, string InputConfirmPassword, string InputEmail)
         {
             int id;
             if (string.IsNullOrWhiteSpace(InputLogin) || string.IsNullOrWhiteSpace(InputPassword) || string.IsNullOrWhiteSpace(InputConfirmPassword) || string.IsNullOrWhiteSpace(InputEmail))
             {
-                id = -1; // pole nie zostało wypełnione
+                ErrorAndExceptions.RegisterError(1); // pole nie zostało wypełnione
             }
             else if (InputPassword != InputConfirmPassword)
             {
-                id = -2;
+                ErrorAndExceptions.RegisterError(2);
             }
             else if (InputPassword == InputLogin)
             {
-                id = -3;
+                ErrorAndExceptions.RegisterError(2);
             }
             else
             {
@@ -201,55 +201,23 @@ namespace WebApp.Models
                     try
                     {
                         id = (int)reader[0];
-                        id = -4;
+                        ErrorAndExceptions.RegisterError(4);
                     }
                     catch
                     {
-                        
-                        id = ToBaseUserLogin(InputLogin, InputPassword, InputEmail);
+                       ToBaseUserLogin(InputLogin, InputPassword, InputEmail);
                     }
                     connection.Close();
                 }
 
                 
             }
-            return id;
+            //return id;
         }
-        public static string DataRegisterExist(string InputLogin, string InputPassword, string InputConfirmPassword, string InputEmail)
+        public static void DataRegisterExist(string InputLogin, string InputPassword, string InputConfirmPassword, string InputEmail)
         {
-            string text;
-            int correctnessid = CheckRegisterData(InputLogin, InputPassword, InputConfirmPassword, InputEmail);
-            if (correctnessid == -1)
-            {
-                text = "Wartość pola nie może pozostać pusta.";
-            }
-            else if(correctnessid == -2)
-            {
-                text = "Hasło i jego potwierdzenie nie są takie same.";
-            }
-            else if(correctnessid == -3)
-            {
-                text = "Login i hasło nie mogą być takie same.";
-            }
-            else if(correctnessid == -4)
-            {
-                text = "Na podany login lub email istnieje już konto.";
+            CheckRegisterData(InputLogin, InputPassword, InputConfirmPassword, InputEmail);
 
-            }
-            else if (correctnessid == -5)
-            {
-                text = "Rejestracja przebiegła pomyślnie.";
-            }
-            else if (correctnessid == -6)
-            {
-                text = "Rejestracja nie przebiegła pomyślnie.";
-            }
-            else
-            {
-                text = "Dla podanych danych istnieje już konto.";
-            }
-            
-            return text;
         }
     }
 }

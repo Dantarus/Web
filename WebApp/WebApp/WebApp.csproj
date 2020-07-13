@@ -125,6 +125,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Encryption.cs" />
+    <Compile Include="Models\ErrorAndExceptions.cs" />
     <Compile Include="Models\UserDataForm.cs" />
     <Compile Include="Models\FromBaseUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
