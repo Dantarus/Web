@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "LogIn";
+    ViewBag.Title = "Logowanie";
 }
 
-<h2>LogIn</h2>
+    <h2>@ViewBag.Title</h2>
 
 
-<form action="~/Form/FormLoginInput" method="post">
+<form action="~/Home/LogIn" method="post">
     <div class="form-group">
         <label for="InputLogin">Login:</label>
         <input type="text" class="form-control" runat="server" name="InputLogin" id="InputLogin" placeholder="Enter login">
@@ -15,9 +15,5 @@
         <label for="InputPassword">Hasło</label>
         <input type="password" class="form-control" name="InputPassword" placeholder="Enter password">
     </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="CheckBox" id="CheckBox">
-        <label class="form-check-label" for="Check" name="CheckBox">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="submitLogin">Submit</button>
 </form>

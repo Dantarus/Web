@@ -8,6 +8,7 @@ namespace WebApp.Models
     public class ErrorAndExceptions
     {
         private static string text;
+        //metoda zawiera komunikaty błędów występujących w trakcie rejestracji
         public static void RegisterError(int errorId) 
         {
             switch (errorId)
@@ -35,6 +36,7 @@ namespace WebApp.Models
                     break;
             }
         }
+        //metoda wypisująca komunikat błędu ze zmiennej string
         public static string GetRegisterStatus()
         {
             return text;

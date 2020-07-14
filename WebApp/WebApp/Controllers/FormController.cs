@@ -10,6 +10,7 @@ namespace WebApp.Controllers
     public class FormController : Controller
     {
         // GET: Form
+        //metoda przechwytuje wpisane do formularza dane logowania
         [HttpPost]
         public ActionResult FormLoginInput(string InputLogin, string InputPassword/*,string CheckBox*/)
         {
@@ -17,6 +18,8 @@ namespace WebApp.Controllers
             ViewBag.Text = text;
             return View();
         }
+
+        //metoda przechwytuje wpisane do formularza dane rejstracji
         [HttpPost]
         public ActionResult FormRegisterInput(string InputLogin, string InputPassword, string InputConfirmPassword, string InputEmail/*,string CheckBox*/)
         {

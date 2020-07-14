@@ -150,6 +150,7 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Form\FormLoginInput.cshtml" />
     <Content Include="Views\Form\FormRegisterInput.cshtml" />
+    <Content Include="Views\Shared\_ErrorMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

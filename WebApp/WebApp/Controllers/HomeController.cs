@@ -13,14 +13,6 @@ namespace WebApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            //pobieranie danych przy pomocy technologii AdoNet
-            //connectionString dostępny we właściwościach bazy danych
-            //string Login = BaseUserData.GetLogin(2);
-            //string Password = BaseUserData.GetPassword(2);
-            //string ExistInBase = BaseUserData.DataExist(Login, Password);
-            //ViewBag.Login = Login;
-            //ViewBag.Password = Password;
-            //ViewBag.ExistInBase = ExistInBase;
             return View();
         }
         public ActionResult LogIn()
@@ -33,6 +25,9 @@ namespace WebApp.Controllers
 
             return View();
         }
-            
+        public PartialViewResult ErrorMessage()
+        {
+            return PartialView("_ErrorMessage");
+        }   
     }
 }

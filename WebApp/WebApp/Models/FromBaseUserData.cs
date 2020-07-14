@@ -43,6 +43,7 @@ namespace WebApp.Models
                 userPassword = reader[0].ToString();
 
                 connection.Close();
+                command.Dispose();
 
             }
         }
@@ -81,6 +82,7 @@ namespace WebApp.Models
                 userLogin = reader[0].ToString();
 
                 connection.Close();
+                command.Dispose();
 
             }
         }
@@ -115,7 +117,7 @@ namespace WebApp.Models
                     ErrorAndExceptions.RegisterError(6);
                 }
                 connection.Close();
-
+                command.Dispose();
             }
         }
         
@@ -147,6 +149,8 @@ namespace WebApp.Models
                     {
                         id = -2;
                     }
+                    connection.Close();
+                    command.Dispose();
                 }
             }
             return id;
@@ -208,6 +212,8 @@ namespace WebApp.Models
                        ToBaseUserLogin(InputLogin, InputPassword, InputEmail);
                     }
                     connection.Close();
+                    command.Dispose();
+
                 }
 
                 
