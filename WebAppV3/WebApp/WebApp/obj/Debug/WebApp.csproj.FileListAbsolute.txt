@@ -190,3 +190,16 @@ D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\System.Buffers.xml
 D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\System.Memory.xml
 D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\System.Numerics.Vectors.xml
 D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\mongocrypt.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\Crc32C.NET.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\DnsClient.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\MongoDB.Bson.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\MongoDB.Driver.Core.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\MongoDB.Libmongocrypt.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\SharpCompress.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\Snappy.NET.dll
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\Crc32C.NET.xml
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\DnsClient.xml
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\MongoDB.Bson.xml
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\MongoDB.Driver.Core.xml
+D:\Repozytorium\WebAppV3\WebApp\WebApp\bin\Snappy.NET.xml

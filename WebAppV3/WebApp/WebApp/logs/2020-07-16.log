@@ -1,0 +1,68 @@
+2020-07-16 08:08:55.7447 INFO Pocz¹tek Rejestracji.
+2020-07-16 08:08:57.6482 INFO System.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__UserData__7838F272DF112245'. Cannot insert duplicate key in object 'dbo.UserDataTable'. The duplicate key value is (daniel              ).
+The statement has been terminated.
+   w System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   w System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   w System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   w WebApp.Models.ToBaseInsertion.InsertData(String login, String password, String email) w D:\Repozytorium\WebAppV3\WebApp\WebApp\Models\ToBaseInsertion.cs:wiersz 38
+ClientConnectionId:b96af771-1ef8-4103-af68-bd69346fb243
+Error Number:2627,State:1,Class:14
+2020-07-16 08:08:57.7012 INFO Rejestracja nie przebieg³a pomyœlnie.
+2020-07-16 08:08:58.1373 INFO Rejestracja przebieg³a pomyœlnie.
+2020-07-16 08:08:58.2213 INFO System.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__UserData__7838F272DF112245'. Cannot insert duplicate key in object 'dbo.UserDataTable'. The duplicate key value is (daniel              ).
+The statement has been terminated.
+   w System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   w System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   w System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   w WebApp.Models.ToBaseInsertion.InsertData(String login, String password, String email) w D:\Repozytorium\WebAppV3\WebApp\WebApp\Models\ToBaseInsertion.cs:wiersz 38
+ClientConnectionId:b96af771-1ef8-4103-af68-bd69346fb243
+Error Number:2627,State:1,Class:14
+2020-07-16 08:08:58.2403 INFO Rejestracja nie przebieg³a pomyœlnie.
+2020-07-16 08:09:07.9633 INFO Rejestracja nie przebieg³a pomyœlnie.
+2020-07-16 08:09:07.9633 INFO Koniec Rejestracji.
+2020-07-16 08:13:30.9414 INFO Pocz¹tek Rejestracji.
+2020-07-16 08:13:31.1958 INFO Rejestracja przebieg³a pomyœlnie.
+2020-07-16 08:13:31.4142 INFO System.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@login nvarchar(6),@email nvarchar(4000),@password nvarchar(400' expects the parameter '@email', which was not supplied.
+   w System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   w System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   w System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   w WebApp.Models.ToBaseInsertion.InsertData(String login, String password, String email) w D:\Repozytorium\WebAppV3\WebApp\WebApp\Models\ToBaseInsertion.cs:wiersz 38
+ClientConnectionId:aebf11eb-5e6e-4190-bee9-7d610603cd9b
+Error Number:8178,State:1,Class:16
+2020-07-16 08:13:31.4402 INFO Rejestracja nie przebieg³a pomyœlnie.
+2020-07-16 08:13:31.4402 INFO Wartoœæ pola nie mo¿e pozostaæ pusta.
+2020-07-16 08:16:27.2836 INFO Pocz¹tek Rejestracji.
+2020-07-16 08:16:27.5330 INFO Rejestracja przebieg³a pomyœlnie.
+2020-07-16 08:16:27.8016 INFO System.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@login nvarchar(6),@email nvarchar(4000),@password nvarchar(400' expects the parameter '@email', which was not supplied.
+   w System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   w System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   w System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   w System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   w System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   w System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   w WebApp.Models.ToBaseInsertion.InsertData(String login, String password, String email) w D:\Repozytorium\WebAppV3\WebApp\WebApp\Models\ToBaseInsertion.cs:wiersz 38
+ClientConnectionId:384979b1-1fb3-4666-abf9-286adef8319e
+Error Number:8178,State:1,Class:16
+2020-07-16 08:16:27.8596 INFO Rejestracja nie przebieg³a pomyœlnie.
+2020-07-16 08:16:27.8684 INFO Wartoœæ pola nie mo¿e pozostaæ pusta.
