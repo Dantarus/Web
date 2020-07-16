@@ -16,7 +16,6 @@ namespace WebApp6.Controllers
         public ActionResult Register(int id=0)
         {
             Models.Table userData = new Models.Table();
-            userData.password = Encryption.EncryptedString(userData.password);
             return View(userData);
         }
         [HttpPost]
@@ -35,9 +34,7 @@ namespace WebApp6.Controllers
                     return View("Register", userData);
                 }
                 string enc = Encryption.EncryptedString(userData.password);
-                ViewBag.enc = enc;
                
-                ViewBag.p = userData.password;
                 dbModel.Table.Add(userData);
                 dbModel.SaveChanges();
             }

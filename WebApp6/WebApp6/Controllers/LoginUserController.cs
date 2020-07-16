@@ -4,6 +4,7 @@ using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebApp.Models;
 using WebApp6.Models;
 
@@ -27,19 +28,43 @@ namespace WebApp6.Controllers
                 {
                      
                     ViewBag.SuccessMessage = "Logowanie przebiegło pomyślnie";
-                    EmailHandler emailHandler = new EmailHandler(" ", loginData.email, "Logowanie na konto");
-                    emailHandler.CreateAndSendMessage();
-                    ViewBag.RegisterMessage = emailHandler.SendingStatus() + loginData.email + ".";
+                    LogCreate.Logger(ViewBag.SuccessMessage);
+                    try
+                    {
+                        EmailHandler emailHandler = new EmailHandler(" ", loginData.email, "Logowanie na konto");
+                        emailHandler.CreateAndSendMessage();
+                        ViewBag.RegisterMessage = emailHandler.SendingStatus() + loginData.email + ".";
+                        LogCreate.Logger(ViewBag.RegisterMessage);
+                        
+
+                        FormsAuthentication.SetAuthCookie(loginData.login, false);
+                        RedirectToAction("Index", "Home");
+                    }
+                    catch(Exception exp)
+                    {
+
+                        LogCreate.Logger("Wysyłanie wiadomości nie przebiegło pomyślnie " + exp);
+                    }
+                    
 
                 }
                 else
                 {
                     ViewBag.SuccessMessage = "Błędne dane logowania";
+                    LogCreate.Logger(ViewBag.SuccessMessage);
 
                 }
 
                 return View("Login", new Models.Table());
             }
+        }
+        [Authorize]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            LogCreate.Logger("Wylogowano");
+            return RedirectToAction("Login");
+           
         }
     }
 }

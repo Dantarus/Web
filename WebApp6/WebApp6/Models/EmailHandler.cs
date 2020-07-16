@@ -5,6 +5,7 @@ using System.Web;
 using System.Net.Mail;
 using System.Web.Security;
 using System.Net;
+using System.Configuration;
 
 namespace WebApp.Models
 {
@@ -15,7 +16,7 @@ namespace WebApp.Models
         private static string Login;
         private static string Email;
         private static string Message;
-
+       
         public EmailHandler()
         {
 
@@ -30,10 +31,10 @@ namespace WebApp.Models
         public static string test = "prawidłowo";
         public void CreateAndSendMessage()
         {
-
+            var appSettings = ConfigurationManager.AppSettings;
             MailMessage message = new MailMessage()
             {
-                From = new MailAddress(baseEmail),
+                From = new MailAddress(appSettings["baseEmail"].ToString()),
                 Subject = Message,
                 Body = "Witamy w usłudze " + Login + ".",
             };
@@ -42,23 +43,23 @@ namespace WebApp.Models
 
             SmtpClient smtpClient = new SmtpClient()
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
+                Host = appSettings["Host"].ToString(),//"smtp.gmail.com",
+                Port = Int32.Parse(appSettings["Port"].ToString()),
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(baseEmail, basePassword),
+                Credentials = new NetworkCredential(appSettings["baseEmail"].ToString(), appSettings["basePassword"].ToString()),
                 EnableSsl = true,
             };
-
             try
             {
                 smtpClient.Send(message);
                 test = "Wysłano potwierdzenie na email " + Email;
+                LogCreate.Logger(test);
             }
             catch (Exception exp)
             {
                 test = "Niewysłano potwierdzenie na email " + Email;
                 exp.Message.ToString();
-                //LogCreate.Logger(exp);
+                LogCreate.Logger(test);
             }
         }
 

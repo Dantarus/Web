@@ -15,9 +15,18 @@ namespace WebApp.Models
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
-                UTF8Encoding utf8 = new UTF8Encoding();
-                byte[] data = md5.ComputeHash(utf8.GetBytes(password));//tworzy klucz hash 
-                encryptedText = Convert.ToBase64String(data);//zwrócenie typu string z konwersji z byte
+                try
+                {
+                    UTF8Encoding utf8 = new UTF8Encoding();
+                    byte[] data = md5.ComputeHash(utf8.GetBytes(password));//tworzy klucz hash 
+                    encryptedText = Convert.ToBase64String(data);//zwrócenie typu string z konwersji z byte
+                    LogCreate.Logger("Szyfrowanie hasło przebiegło pomyślnie");
+                }
+                catch (Exception exp)
+                {
+                    LogCreate.Logger("Szyfrowanie hasło nie przebiegło pomyślnie: " + exp);
+                }
+               
               
             }
         }
