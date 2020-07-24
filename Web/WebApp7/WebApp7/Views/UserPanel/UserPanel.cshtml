@@ -1,0 +1,29 @@
+﻿@model List<WebApp7.Models.UserList>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Login
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+           
+        </td>
+    </tr>
+}
+
+</table>
