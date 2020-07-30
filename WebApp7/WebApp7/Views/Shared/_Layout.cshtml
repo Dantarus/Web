@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header" style="text-align:center">
+                <a class="navbar-brand" style="text-align:center">
+                    @Html.ActionLink("Strona Główna", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="dropdown" style="text-align:center">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Panel Administracyjny
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Usuń użytkownika", "DeleteUser", "DeleteUser", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Zmień dane użytkownika", "UpdateUser", "Update", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Resetuj Hasło", "ResetPassword", "ResetPassword", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Nadaj uprawnienia użytkownika", "SetRole", "SetRole", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Panel użytkownika", "UserPanel", "UserPanel", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        </ul>
+                    </li>
+                }
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li style="text-align:center">@Html.ActionLink("Wyloguj", "Logout", "LoginUser", new { area = "" }, new { @class = "navbar-right" })</li>
+                }
+                else
+                {
+                    <li style="text-align:center"> @Html.ActionLink("Rejestracja", "Register", "RegisterUser", new { area = "" }, new { @class = "navbar-right" })</li>
+                    <li style="text-align:center"> @Html.ActionLink("Logowanie", "Login", "LoginUser", new { area = "" }, new { @class = "navbar-right" })</li>
+                }
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            @Session["LoginMessage"]
+            @Session["RegisterMessage"]
+            @Session["DeleteUser"]
+            @Session["EmailMessage"]
+            @Session["ResetMessage"]
+            @Session["RoleMessage"]
+            @Session["UpdateMessage"]
+        </div>
+    </div>
+    
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        window.alert(Session["Komunikat"]);
+    </script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

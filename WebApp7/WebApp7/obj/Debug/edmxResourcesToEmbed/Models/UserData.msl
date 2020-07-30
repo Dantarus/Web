@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UserDataModelStoreContainer" CdmEntityContainer="UserDataEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(UserDataModel.Roles)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoleMapping">
+      <EntityTypeMapping TypeName="IsTypeOf(UserDataModel.UserRoleMapping)">
+        <MappingFragment StoreEntitySet="UserRoleMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(UserDataModel.Users)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Check_Login" FunctionName="UserDataModel.Store.Check_Login" />
+    <FunctionImportMapping FunctionImportName="DeleteUser" FunctionName="UserDataModel.Store.DeleteUser" />
+    <FunctionImportMapping FunctionImportName="GetRole" FunctionName="UserDataModel.Store.GetRole" />
+    <FunctionImportMapping FunctionImportName="InsertData" FunctionName="UserDataModel.Store.InsertData" />
+    <FunctionImportMapping FunctionImportName="isEmailExist" FunctionName="UserDataModel.Store.isEmailExist" />
+    <FunctionImportMapping FunctionImportName="isLoginExist" FunctionName="UserDataModel.Store.isLoginExist" />
+    <FunctionImportMapping FunctionImportName="isPasswordExist" FunctionName="UserDataModel.Store.isPasswordExist" />
+    <FunctionImportMapping FunctionImportName="SetRole" FunctionName="UserDataModel.Store.SetRole" />
+    <FunctionImportMapping FunctionImportName="User_RoleData" FunctionName="UserDataModel.Store.User_RoleData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UserDataModel.User_RoleData_Result1">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserList" FunctionName="UserDataModel.Store.UserList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UserDataModel.UserList_Result">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateData" FunctionName="UserDataModel.Store.UpdateData" />
+    <FunctionImportMapping FunctionImportName="GetEmail" FunctionName="UserDataModel.Store.GetEmail" />
+    <FunctionImportMapping FunctionImportName="GetLogin" FunctionName="UserDataModel.Store.GetLogin" />
+  </EntityContainerMapping>
+</Mapping>

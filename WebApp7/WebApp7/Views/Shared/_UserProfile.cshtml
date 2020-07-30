@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApp7.Models.Users>
+    <table>
+
+        <tr id="Login">
+            <td>
+                @Html.DisplayNameFor<model => model.Login>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Login)
+            </td>
+        </tr>
+
+        <tr id="Email">
+            <td>
+                <label>Email:</label>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Email)
+            </td>
+        </tr>
+
+    </table>

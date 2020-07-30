@@ -1,0 +1,33 @@
+﻿@model List<WebApp7.Models.UserListModel>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                Login
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Uprawnienia
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+            </tr>
+        }
+
+    </table>
